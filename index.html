@@ -3,111 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Your Name] — Portfolio</title>
-<meta name="description" content="Portfolio of [Your Name] — [Your Role/Tagline]">
+<title>Seenivaasan Venkat — Portfolio</title>
+<meta name="description" content="Portfolio of Seenivaasan Venkat — Technical Product Manager | AI Transformation | Project & Customer Strategy Leader">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper: #F6F7F4;
-    --paper-alt: #EFF1EC;
-    --ink: #14181A;
-    --ink-soft: #5B625E;
-    --accent: #2E5C4D;
-    --accent-soft: #DCE6E1;
-    --line: #DCDFDA;
-    --display: 'Archivo', sans-serif;
-    --body: 'Inter', sans-serif;
+    --bg: #0A0A0D;
+    --bg-alt: #121216;
+    --surface: #17171C;
+    --surface-hover: #1D1D24;
+    --border: #26262E;
+    --border-soft: #1E1E24;
+    --text: #F5F5F7;
+    --text-soft: #9B9BA5;
+    --text-faint: #6B6B76;
+    --accent1: #8B5CF6;
+    --accent2: #3B82F6;
+    --accent-soft: rgba(139,92,246,0.12);
+    --gradient: linear-gradient(90deg, var(--accent1), var(--accent2));
+    --font: 'Inter', sans-serif;
     --mono: 'JetBrains Mono', monospace;
-    --max: 1080px;
+    --max: 1040px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+    --radius-pill: 999px;
   }
 
   *{ box-sizing: border-box; margin:0; padding:0; }
-
   html{ scroll-behavior: smooth; }
 
   body{
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--body);
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 70% 45% at 50% 0%, rgba(139,92,246,0.14), transparent),
+      radial-gradient(ellipse 50% 35% at 85% 15%, rgba(59,130,246,0.08), transparent);
+    color: var(--text);
+    font-family: var(--font);
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   a{ color: inherit; text-decoration: none; }
-
   img{ max-width: 100%; display:block; }
 
-  .wrap{
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 32px;
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3{
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    font-weight: 800;
   }
 
   .eyebrow{
     font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.14em;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent1);
     display: inline-flex;
     align-items: center;
     gap: 8px;
   }
 
-  .eyebrow::before{
-    content: '';
-    width: 14px;
-    height: 1px;
-    background: var(--accent);
+  .gradient-text{
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
-
-  h1, h2, h3{
-    font-family: var(--display);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-
-  /* ---------- Ring mark (signature element) ---------- */
-  .ring-mark{
-    --size: 28px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    border: 1.5px solid var(--line);
-    position: relative;
-    flex-shrink: 0;
-  }
-  .ring-mark::after{
-    content:'';
-    position:absolute;
-    top:-1.5px; left:-1.5px;
-    width:100%; height:100%;
-    border-radius:50%;
-    border: 1.5px solid transparent;
-    border-top-color: var(--accent);
-    border-right-color: var(--accent);
-    transform: rotate(35deg);
-  }
-
-  .ring-divider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin: 0 auto;
-  }
-  .ring-divider .ring-mark{ --size: 18px; }
 
   /* ---------- Nav ---------- */
   header{
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(246,247,244,0.86);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
+    background: rgba(10,10,13,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
   }
   nav.wrap{
     display:flex;
@@ -115,307 +91,349 @@
     justify-content: space-between;
     padding-top: 18px;
     padding-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
   .brand{
     display:flex;
     align-items:center;
-    gap: 10px;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: -0.01em;
+    gap: 9px;
+    font-weight: 800;
+    font-size: 16px;
   }
-  .nav-links{
-    display:flex;
-    gap: 28px;
-    flex-wrap: wrap;
-    font-size: 14px;
-    font-weight: 500;
+  .brand-dot{
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gradient);
+    box-shadow: 0 0 12px rgba(139,92,246,0.6);
   }
-  .nav-links a{
-    position:relative;
-    padding-bottom: 4px;
+  .nav-links{ display:flex; gap: 24px; font-size: 13.5px; font-weight: 500; flex-wrap: wrap; }
+  .nav-links a{ color: var(--text-soft); transition: color 0.2s ease; }
+  .nav-links a:hover{ color: var(--text); }
+  .nav-links a.nav-highlight{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    background: var(--text);
+    color: var(--bg);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
   }
-  .nav-links a::after{
-    content:'';
-    position:absolute;
-    left:0; bottom:0;
-    width:0; height:1px;
-    background: var(--accent);
-    transition: width 0.25s ease;
-  }
-  .nav-links a:hover::after{ width:100%; }
+  .nav-links a.nav-highlight:hover{ opacity: 0.85; color: var(--bg); }
+
+  section{ padding: 80px 0; }
+
+  .section-head{ margin-bottom: 44px; }
+  .section-head h2{ font-size: clamp(26px, 3.2vw, 34px); margin-top: 12px; }
 
   /* ---------- Hero ---------- */
-  .hero{
-    padding: 96px 0 88px;
-    display:grid;
-    grid-template-columns: 1.3fr 0.9fr;
-    gap: 48px;
-    align-items: center;
+  .hero{ text-align:center; padding: 90px 0 60px; }
+
+  .avatar-frame{
+    width: 128px; height: 128px;
+    margin: 0 auto 26px;
+    border-radius: 50%;
+    position: relative;
+    padding: 3px;
+    background: var(--gradient);
   }
+  .avatar-inner{
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: var(--bg);
+    padding: 3px;
+    overflow: hidden;
+    display:flex; align-items:center; justify-content:center;
+    position: relative;
+  }
+  .avatar-inner img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .avatar-fallback{
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--surface);
+    color: var(--text-faint);
+  }
+  .avatar-fallback .initials{ font-size: 30px; font-weight: 700; color: var(--text); }
+  .avatar-fallback .hint{ font-family: var(--mono); font-size: 9px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 7px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-bottom: 26px;
+  }
+  .status-dot{ width:6px; height:6px; border-radius:50%; background: var(--accent1); }
   .hero h1{
-    font-size: clamp(40px, 5.4vw, 64px);
-    margin: 18px 0 16px;
+    font-size: clamp(38px, 6vw, 62px);
+    margin-bottom: 18px;
+    max-width: 14ch;
+    margin-left:auto; margin-right:auto;
   }
   .hero .role{
     font-family: var(--mono);
-    font-size: 15px;
-    color: var(--ink-soft);
-    margin-bottom: 20px;
+    font-size: 14.5px;
+    color: var(--text-soft);
+    margin-bottom: 22px;
   }
   .hero p.lede{
-    max-width: 46ch;
-    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0 auto 36px;
+    color: var(--text-soft);
     font-size: 17px;
-    margin-bottom: 32px;
   }
-  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom: 56px; }
   .btn{
     font-family: var(--mono);
     font-size: 13px;
+    font-weight: 600;
     letter-spacing: 0.03em;
-    padding: 13px 22px;
-    border-radius: 2px;
+    padding: 14px 26px;
+    border-radius: var(--radius-pill);
     display:inline-flex;
     align-items:center;
     gap:8px;
     transition: all 0.2s ease;
+    border: 1px solid transparent;
   }
-  .btn-primary{
-    background: var(--ink);
-    color: var(--paper);
-  }
-  .btn-primary:hover{ background: var(--accent); }
-  .btn-secondary{
-    border: 1px solid var(--line);
-    color: var(--ink);
-  }
-  .btn-secondary:hover{ border-color: var(--accent); color: var(--accent); }
+  .btn-primary{ background: var(--gradient); color: #fff; }
+  .btn-primary:hover{ opacity: 0.88; transform: translateY(-1px); }
+  .btn-secondary{ background: var(--surface); border-color: var(--border); color: var(--text); }
+  .btn-secondary:hover{ border-color: var(--accent1); color: var(--accent1); }
 
-  .hero-mark{
-    position:relative;
-    aspect-ratio: 1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  /* ---------- Stat row ---------- */
+  .stat-row{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
   }
-  .hero-mark .ring{
-    position:absolute;
-    border-radius:50%;
-    border: 1px solid var(--line);
+  .stat{
+    padding: 26px 18px;
+    text-align:center;
+    border-right: 1px solid var(--border);
   }
-  .hero-mark .ring.r1{ width:100%; height:100%; }
-  .hero-mark .ring.r2{ width:70%; height:70%; }
-  .hero-mark .ring.r3{
-    width:42%; height:42%;
-    border-color: var(--accent);
-    border-width: 1.5px;
-  }
-  .hero-mark .dot{
-    width:8px; height:8px;
-    border-radius:50%;
-    background: var(--accent);
-    position:absolute;
-    top: 14%;
-    right: 18%;
-  }
-  .hero-mark .loc{
-    position:absolute;
-    bottom: 6%;
+  .stat:last-child{ border-right: none; }
+  .stat .num{
     font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display:block;
+    margin-bottom: 6px;
+  }
+  .stat .label-sm{
+    font-size: 12.5px;
+    color: var(--text-faint);
   }
 
-  section{ padding: 80px 0; border-top: 1px solid var(--line); }
-
-  .section-head{
-    margin-bottom: 44px;
-  }
-  .section-head h2{
-    font-size: clamp(28px, 3.4vw, 36px);
-    margin-top: 12px;
+  /* ---------- Card shell ---------- */
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
   }
 
   /* ---------- About ---------- */
-  .about-grid{
-    display:grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 56px;
-  }
-  .about-grid p{ color: var(--ink-soft); margin-bottom: 16px; max-width: 52ch; }
-  .skill-group{ margin-bottom: 22px; }
+  .about-card{ padding: 40px; display:grid; grid-template-columns: 1.15fr 1fr; gap: 44px; }
+  .about-card p{ color: var(--text-soft); margin-bottom: 14px; }
+  .skill-group{ margin-bottom: 20px; }
   .skill-group h4{
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
     margin-bottom: 10px;
   }
   .tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
   .tag{
     font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: 12px;
     background: var(--accent-soft);
-    color: var(--accent);
-    padding: 6px 11px;
-    border-radius: 2px;
+    color: #C4B5FD;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(139,92,246,0.2);
   }
 
-  /* ---------- Work ---------- */
+  /* ---------- Work / feature grid ---------- */
   .work-grid{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
   .work-card{
-    background: var(--paper);
-    padding: 30px 26px;
+    padding: 28px 26px;
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+    transition: all 0.2s ease;
+  }
+  .work-card:hover{ background: var(--surface-hover); border-color: rgba(139,92,246,0.35); }
+  .work-icon{
+    font-size: 22px;
+    width: 44px; height: 44px;
+    display:flex; align-items:center; justify-content:center;
+    background: var(--accent-soft);
+    border-radius: var(--radius-sm);
+  }
+  .work-card h3{ font-size: 18px; font-weight: 700; }
+  .work-card p{ color: var(--text-soft); font-size: 14px; line-height: 1.6; }
+  .work-card .tag-row{ margin-top: 4px; }
+
+  /* ---------- Writing ---------- */
+  .writing-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .writing-card{
+    padding: 32px 28px;
     display:flex;
     flex-direction:column;
     gap: 14px;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
   }
-  .work-card:hover{ background: var(--paper-alt); }
-  .work-card .wnum{
+  .writing-card:hover{ background: var(--surface-hover); border-color: rgba(139,92,246,0.35); }
+  .writing-card .work-icon{ font-size: 24px; width: 48px; height: 48px; }
+  .writing-card h3{ font-size: 19px; font-weight: 700; }
+  .writing-card p{ color: var(--text-soft); font-size: 14.5px; line-height: 1.65; flex-grow: 1; }
+  .writing-link{
     font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-  }
-  .work-card h3{ font-size: 19px; }
-  .work-card p{ color: var(--ink-soft); font-size: 14.5px; flex-grow:1; }
-  .work-card .tag-row{ margin-top: 4px; }
-  .work-card .tag{ background: transparent; border: 1px solid var(--line); color: var(--ink-soft); padding: 4px 9px; font-size: 11.5px; }
-  .work-link{
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
+    font-size: 12.5px;
+    color: var(--accent1);
+    font-weight: 600;
   }
 
-  /* ---------- Experience ---------- */
-  .timeline{ display:flex; flex-direction:column; }
-  .tl-item{
+  /* ---------- Experience: numbered steps ---------- */
+  .steps{ display:flex; flex-direction:column; gap: 0; }
+  .step{
     display:grid;
-    grid-template-columns: 130px 24px 1fr;
-    gap: 0 20px;
-    padding-bottom: 40px;
-    position:relative;
+    grid-template-columns: 90px 1fr;
+    gap: 26px;
+    padding: 28px 0;
+    border-top: 1px solid var(--border-soft);
   }
-  .tl-item:last-child{ padding-bottom: 0; }
-  .tl-date{
+  .step:first-child{ border-top: none; }
+  .step-num{
     font-family: var(--mono);
     font-size: 13px;
-    color: var(--ink-soft);
+    color: var(--accent1);
     padding-top: 3px;
   }
-  .tl-line-col{ display:flex; flex-direction:column; align-items:center; }
-  .tl-dot{
-    width:9px; height:9px;
-    border-radius:50%;
-    background: var(--accent);
-    margin-top: 6px;
-    flex-shrink:0;
-  }
-  .tl-line{ width:1px; flex-grow:1; background: var(--line); margin-top: 6px; }
-  .tl-item:last-child .tl-line{ display:none; }
-  .tl-content h3{ font-size: 18px; margin-bottom: 4px; }
-  .tl-content .org{ font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 10px; }
-  .tl-content p{ color: var(--ink-soft); font-size: 14.5px; max-width: 58ch; }
-
-  /* ---------- Contact ---------- */
-  .contact-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-  }
-  .contact-intro p{ color: var(--ink-soft); max-width: 42ch; margin: 14px 0 26px; }
-  .contact-email{
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--accent);
-    display:inline-block;
-    margin-bottom: 28px;
-  }
-  .social-row{ display:flex; gap: 20px; font-family: var(--mono); font-size: 13.5px; }
-  .social-row a{ border-bottom: 1px solid var(--line); padding-bottom: 2px; }
-  .social-row a:hover{ border-color: var(--accent); color: var(--accent); }
-
-  form{ display:flex; flex-direction:column; gap: 16px; }
-  .field{ display:flex; flex-direction:column; gap: 6px; }
-  .field label{
+  .step-content .tl-date{
     font-family: var(--mono);
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
+    color: var(--text-faint);
+    margin-bottom: 6px;
   }
-  .field input, .field textarea{
-    font-family: var(--body);
-    font-size: 15px;
-    padding: 12px 14px;
-    border: 1px solid var(--line);
-    border-radius: 2px;
-    background: var(--paper-alt);
-    color: var(--ink);
-  }
-  .field input:focus, .field textarea:focus{
-    outline: none;
-    border-color: var(--accent);
-  }
-  .field textarea{ resize: vertical; min-height: 100px; }
-  form button{
-    align-self: flex-start;
-    border: none;
-    cursor: pointer;
-    font-family: var(--mono);
-  }
-  .form-note{ font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+  .step-content h3{ font-size: 18px; margin-bottom: 4px; font-weight: 700; }
+  .step-content .org{ font-family: var(--mono); font-size: 13px; color: var(--accent1); margin-bottom: 10px; }
+  .step-content p{ color: var(--text-soft); font-size: 14.5px; line-height: 1.65; max-width: 62ch; }
 
-  footer{
-    border-top: 1px solid var(--line);
-    padding: 32px 0;
-  }
-  footer .wrap{
+  /* ---------- Vloger (Instagram embed) ---------- */
+  .vloger-card{
+    padding: 36px;
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
+    text-align:center;
+    gap: 18px;
   }
-  footer .brand{ font-size: 14px; }
-  footer .fnote{ font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  .vloger-frame-wrap{
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+  }
+  .vloger-frame-wrap iframe{
+    width: 100%; height: 100%; border: none; display:block;
+  }
+  .vloger-note{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    max-width: 48ch;
+  }
 
-  /* ---------- Reveal on scroll ---------- */
+  /* ---------- Contact ---------- */
+  .contact-card{ padding: 56px 40px; text-align:center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+  .contact-card p{ color: var(--text-soft); max-width: 46ch; margin: 14px auto 30px; }
+  .contact-email{
+    font-weight: 800;
+    font-size: 22px;
+    display:inline-block;
+    margin-bottom: 6px;
+  }
+  .contact-phone{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-faint);
+    display:block;
+    margin-bottom: 28px;
+  }
+  .badge-row{ display:flex; gap: 10px; justify-content:center; flex-wrap: wrap; margin-top: 30px; }
+  .badge{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 7px 14px;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .badge::before{ content:'✓'; color: var(--accent1); }
+
+  footer{ border-top: 1px solid var(--border-soft); padding: 32px 0; }
+  footer .wrap{
+    display:flex; align-items:center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  footer .fnote{ font-family: var(--mono); font-size: 11.5px; color: var(--text-faint); }
+
   .reveal{ opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.in{ opacity: 1; transform: translateY(0); }
 
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent1); outline-offset: 2px; }
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .reveal{ opacity:1; transform:none; transition:none; }
   }
 
-  @media (max-width: 880px){
-    .hero{ grid-template-columns: 1fr; padding-top: 64px; }
-    .hero-mark{ max-width: 240px; margin: 0 auto; }
-    .about-grid, .contact-grid{ grid-template-columns: 1fr; gap: 36px; }
+  @media (max-width: 780px){
+    .about-card{ grid-template-columns: 1fr; gap: 28px; padding: 28px; }
     .work-grid{ grid-template-columns: 1fr; }
-    .tl-item{ grid-template-columns: 90px 20px 1fr; }
-    nav.wrap{ flex-direction: column; align-items: flex-start; gap: 14px; }
+    .writing-grid{ grid-template-columns: 1fr; }
+    .stat-row{ grid-template-columns: repeat(2, 1fr); }
+    .stat{ border-bottom: 1px solid var(--border); }
+    .step{ grid-template-columns: 1fr; gap: 6px; }
+    nav.wrap{ flex-wrap: wrap; gap: 12px; }
+    .nav-links{ gap: 14px; }
+    .contact-card{ padding: 36px 22px; }
   }
 </style>
 </head>
@@ -423,12 +441,15 @@
 
 <header>
   <nav class="wrap">
-    <a href="#top" class="brand"><span class="ring-mark"></span>cxentric</a>
+    <a href="#top" class="brand"><span class="brand-dot"></span>Seeni Venkat</a>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="https://github.com/cxentric" target="_blank" rel="noopener">GitHub</a>
+      <a href="#vloger">Vloger</a>
+      <a href="#contact" class="nav-highlight">Lets Talk</a>
     </div>
   </nav>
 </header>
@@ -436,102 +457,84 @@
 <main id="top">
 
   <!-- Hero -->
-  <section class="hero wrap" style="border-top:none;">
-    <div>
-      <span class="eyebrow">Portfolio</span>
-      <h1>[Your Name]</h1>
-      <div class="role">[Your Role] — [One line specialty, e.g. "Project &amp; Delivery Management"]</div>
-      <p class="lede">[Write one or two sentences about the kind of work you do and the outcomes you create. Keep it concrete — what do you build, lead, or solve, and for whom?]</p>
-      <div class="btn-row">
-        <a href="#work" class="btn btn-primary">View work</a>
-        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+  <section class="hero wrap">
+    <!--
+      PHOTO UPLOAD SPOT:
+      Replace "profile.jpg" below with the path or URL to your photo
+      (e.g. upload it alongside this HTML file and rename it "profile.jpg",
+      or point src to a hosted image URL). If it fails to load, the
+      circular initials fallback is shown automatically.
+    -->
+    <div class="avatar-frame">
+      <div class="avatar-inner">
+        <img src="profile.jpg" alt="Seenivaasan Venkat"
+             onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';">
+        <div class="avatar-fallback" id="avatarFallback" style="display:none;">
+          <span class="initials">SV</span>
+          <span class="hint">Add profile.jpg</span>
+        </div>
       </div>
     </div>
-    <div class="hero-mark">
-      <div class="ring r1"></div>
-      <div class="ring r2"></div>
-      <div class="ring r3"></div>
-      <div class="dot"></div>
-      <div class="loc">[Your City, Country]</div>
+
+    <span class="eyebrow">// PORTFOLIO</span>
+    <div class="status-pill"><span class="status-dot"></span>Open to collaborating on tech conversations</div>
+    <h1>Technical leadership <span class="gradient-text">before</span> the deal closes</h1>
+    <div class="role">SEENIVAASAN VENKAT — TECHNICAL PRODUCT MANAGER</div>
+    <p class="lede">Strategic Technical Project Manager and Customer Success leader with over a decade of experience across SaaS, cloud ecosystems, and enterprise transformation — currently leading Agentic AI-driven SDLC automation for global enterprises.</p>
+    <div class="btn-row">
+      <a href="#projects" class="btn btn-primary">VIEW WORK →</a>
+      <a href="#contact" class="btn btn-secondary">LETS TALK</a>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span class="num">10+</span><span class="label-sm">Years experience</span></div>
+      <div class="stat"><span class="num">95%</span><span class="label-sm">Customer retention</span></div>
+      <div class="stat"><span class="num">40%</span><span class="label-sm">Adoption lift</span></div>
+      <div class="stat"><span class="num">30%</span><span class="label-sm">Win rate increase</span></div>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="wrap reveal">
     <div class="section-head">
-      <span class="eyebrow">About</span>
+      <span class="eyebrow">// ABOUT</span>
       <h2>A short bio and what I bring to the table</h2>
     </div>
-    <div class="about-grid">
+    <div class="card about-card">
       <div>
-        <p>[Replace this with two or three short paragraphs about your background, how you got into your field, and what drives the way you work. Keep sentences short and specific rather than general claims.]</p>
-        <p>[Optional second paragraph — mention a recent focus area, certification, or the kind of problems you enjoy solving.]</p>
+        <p>Over a decade in SaaS and cloud ecosystems, I've moved from front-line customer success into technical product and program leadership — always at the point where engineering, product, and business stakeholders have to align. Today that means leading Agentic AI-driven SDLC automation, combining product management, change management, and AI adoption strategy to drive scalable engineering outcomes for global enterprises.</p>
+        <p>Along the way I've achieved 95% customer retention, lifted product adoption by 40%, and driven win rates up 30% — outcomes built on cross-functional leadership, solution architecture, and data-driven decision-making. Recent focus areas include agentic AI platforms (Crew AI), generative AI change management, and Salesforce's Agentforce.</p>
       </div>
       <div>
         <div class="skill-group">
           <h4>Core skills</h4>
           <div class="tag-row">
-            <span class="tag">Skill One</span>
-            <span class="tag">Skill Two</span>
-            <span class="tag">Skill Three</span>
-            <span class="tag">Skill Four</span>
+            <span class="tag">AI Transformation</span>
+            <span class="tag">Change Management</span>
+            <span class="tag">Product Management</span>
+            <span class="tag">Project Management</span>
+            <span class="tag">Stakeholder Management</span>
           </div>
         </div>
         <div class="skill-group">
           <h4>Tools</h4>
           <div class="tag-row">
-            <span class="tag">Tool One</span>
-            <span class="tag">Tool Two</span>
-            <span class="tag">Tool Three</span>
+            <span class="tag">Crew AI</span>
+            <span class="tag">Agentic AI</span>
+            <span class="tag">JIRA</span>
+            <span class="tag">GitHub Copilot</span>
+            <span class="tag">Salesforce</span>
+            <span class="tag">HubSpot CRM</span>
+            <span class="tag">Zoho Desk</span>
           </div>
         </div>
         <div class="skill-group">
           <h4>Domains</h4>
           <div class="tag-row">
-            <span class="tag">Domain One</span>
-            <span class="tag">Domain Two</span>
+            <span class="tag">SaaS &amp; Cloud</span>
+            <span class="tag">Customer Success</span>
+            <span class="tag">Enterprise Transformation</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work -->
-  <section id="work" class="wrap reveal">
-    <div class="section-head">
-      <span class="eyebrow">Selected work</span>
-      <h2>A few projects worth a closer look</h2>
-    </div>
-    <div class="work-grid">
-      <div class="work-card">
-        <span class="wnum">01</span>
-        <h3>[Project Name]</h3>
-        <p>[One or two sentences on the problem and the result — use a real outcome or metric where you can.]</p>
-        <div class="tag-row">
-          <span class="tag">Tag</span>
-          <span class="tag">Tag</span>
-        </div>
-        <a href="#" class="work-link">View case study →</a>
-      </div>
-      <div class="work-card">
-        <span class="wnum">02</span>
-        <h3>[Project Name]</h3>
-        <p>[One or two sentences on the problem and the result — use a real outcome or metric where you can.]</p>
-        <div class="tag-row">
-          <span class="tag">Tag</span>
-          <span class="tag">Tag</span>
-        </div>
-        <a href="#" class="work-link">View case study →</a>
-      </div>
-      <div class="work-card">
-        <span class="wnum">03</span>
-        <h3>[Project Name]</h3>
-        <p>[One or two sentences on the problem and the result — use a real outcome or metric where you can.]</p>
-        <div class="tag-row">
-          <span class="tag">Tag</span>
-          <span class="tag">Tag</span>
-        </div>
-        <a href="#" class="work-link">View case study →</a>
       </div>
     </div>
   </section>
@@ -539,74 +542,125 @@
   <!-- Experience -->
   <section id="experience" class="wrap reveal">
     <div class="section-head">
-      <span class="eyebrow">Experience</span>
+      <span class="eyebrow">// EXPERIENCE</span>
       <h2>Where I've worked</h2>
     </div>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-date">2024 — Present</div>
-        <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content">
-          <h3>[Job Title]</h3>
-          <div class="org">[Company Name]</div>
-          <p>[One or two sentences on your responsibilities and a concrete outcome from this role.]</p>
+    <div class="card" style="padding: 12px 32px;">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01 //</div>
+          <div class="step-content">
+            <div class="tl-date">FEB '26 — PRESENT</div>
+            <h3>Technical Project/Program Manager</h3>
+            <div class="org">Acendion Engineering Pvt Ltd · Bangalore, India</div>
+            <p>Driving AI-led transformation for a Delta program, delivering Agentic AI solutions that automate the end-to-end SDLC. Defines change management strategy, governance frameworks, and KPIs, and is the primary point of contact for stakeholder communication and risk mitigation.</p>
+          </div>
         </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2021 — 2024</div>
-        <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content">
-          <h3>[Job Title]</h3>
-          <div class="org">[Company Name]</div>
-          <p>[One or two sentences on your responsibilities and a concrete outcome from this role.]</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2018 — 2021</div>
-        <div class="tl-line-col"><div class="tl-dot"></div></div>
-        <div class="tl-content">
-          <h3>[Job Title]</h3>
-          <div class="org">[Company Name]</div>
-          <p>[One or two sentences on your responsibilities and a concrete outcome from this role.]</p>
+        <div class="step">
+          <div class="step-num">02 //</div>
+          <div class="step-content">
+            <div class="tl-date">SEP '14 — FEB '26 · 11+ YRS</div>
+            <h3>Customer Success Specialist → Manager</h3>
+            <div class="org">Zoho Corp Pvt Ltd · Chennai, India</div>
+            <p>Grew from Customer Success Specialist into de-facto CSM and cross-functional owner of enterprise presales, discovery, and growth — coordinating solution design, onboarding, and value realization across 8+ cloud applications. Introduced KPI dashboards, sales playbooks, and RTM-aligned onboarding frameworks that lifted win rates 30%, held retention at 95%, cut ticket volumes 50%, and sped time-to-value by 30%, while mentoring specialists and standardizing escalation and adoption workflows across the team.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Projects -->
+  <section id="projects" class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">// PROJECTS</span>
+      <h2>A few projects worth a closer look</h2>
+    </div>
+    <div class="work-grid">
+      <div class="card work-card">
+        <div class="work-icon">🤖</div>
+        <h3>Agentic AI-Driven SDLC Automation</h3>
+        <p>Led product and change management for an enterprise Delta program, designing intelligent workflows that automate Jira operations and GitHub repository creation using Crew AI — orchestrating agentic systems across the end-to-end SDLC.</p>
+        <div class="tag-row"><span class="tag">Agentic AI</span><span class="tag">SDLC</span></div>
+      </div>
+      <div class="card work-card">
+        <div class="work-icon">🧩</div>
+        <h3>No-Code/Low-Code CS Ops App</h3>
+        <p>Independently architected a custom Zoho Creator application consolidating real-time dashboards across 8 products, automated SLA/backlog alerts, and QA review modules — driving measurable productivity gains.</p>
+        <div class="tag-row"><span class="tag">Zoho Creator</span><span class="tag">Analytics</span></div>
+      </div>
+      <div class="card work-card">
+        <div class="work-icon">📊</div>
+        <h3>Revenue Enablement &amp; KPI Dashboards</h3>
+        <p>Built workflow frameworks, KPI dashboards, and sales/presales playbooks that aligned BDR, Presales, and Customer Success teams — lifting win rates by 30% and retention to 95%.</p>
+        <div class="tag-row"><span class="tag">KPI Dashboards</span><span class="tag">Playbooks</span></div>
+      </div>
+      <div class="card work-card">
+        <div class="work-icon">🎯</div>
+        <h3>Enterprise Presales &amp; Solutioning</h3>
+        <p>Owned high-impact enterprise and mid-market engagements end to end — solution design, onboarding strategy, and value realization across 8+ cloud applications, aligned to deal objectives and revenue outcomes.</p>
+        <div class="tag-row"><span class="tag">Presales</span><span class="tag">Solution Design</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing -->
+  <section id="writing" class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">// WRITING</span>
+      <h2>Where I write about the work</h2>
+    </div>
+    <div class="writing-grid">
+      <a href="https://www.linkedin.com/newsletters/cxentric-chronicles-7318243852958515201/" target="_blank" rel="noopener" class="card writing-card">
+        <div class="work-icon">📰</div>
+        <h3>Cxentric Chronicles</h3>
+        <p>A LinkedIn newsletter on AI transformation, customer success, and the messy realities of leading enterprise change — short, opinionated dispatches from the field.</p>
+        <span class="writing-link">READ ON LINKEDIN →</span>
+      </a>
+      <a href="https://cxentricplaybook.wordpress.com/" target="_blank" rel="noopener" class="card writing-card">
+        <div class="work-icon">📓</div>
+        <h3>The Cxentric Playbook</h3>
+        <p>Long-form notes and frameworks on product, project management, and customer strategy — the playbook version of what shows up in the newsletter.</p>
+        <span class="writing-link">VISIT THE BLOG →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Vloger -->
+  <section id="vloger" class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">// VLOGER</span>
+      <h2>Off the clock — Madras Rides</h2>
+    </div>
+    <div class="card vloger-card">
+      <div class="vloger-frame-wrap">
+        <iframe
+          src="https://www.instagram.com/madarasirides/embed"
+          allowtransparency="true"
+          loading="lazy"
+          title="Madras Rides Instagram">
+        </iframe>
+      </div>
+      <p class="vloger-note">Instagram often blocks embedded profile views in-browser — if the frame above shows blank, use the button below instead.</p>
+      <a href="https://www.instagram.com/madarasirides/?hl=en" target="_blank" rel="noopener" class="btn btn-secondary">OPEN @MADARASIRIDES →</a>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section id="contact" class="wrap reveal">
-    <div class="contact-grid">
-      <div class="contact-intro">
-        <span class="eyebrow">Contact</span>
-        <h2>Let's talk</h2>
-        <p>[Add a short line inviting people to reach out — about new roles, collaborations, or projects.]</p>
-        <a href="mailto:you@cxentric.in" class="contact-email">you@cxentric.in</a>
-        <div class="social-row">
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-          <a href="#" target="_blank" rel="noopener">Resume ↓</a>
-        </div>
+    <span class="eyebrow">// LETS TALK</span>
+    <div class="contact-card" style="margin-top: 24px;">
+      <h2>Let's talk</h2>
+      <p>Always up for a conversation on AI transformation, product, or customer strategy — reach out directly below.</p>
+      <a href="mailto:seenivenkat1410@gmail.com" class="contact-email gradient-text">seenivenkat1410@gmail.com</a>
+      <span class="contact-phone">7305500551 · Chennai, Tamil Nadu, India</span>
+      <div class="btn-row" style="margin-bottom:0;">
+        <a href="mailto:seenivenkat1410@gmail.com" class="btn btn-primary">EMAIL ME →</a>
+        <a href="https://www.linkedin.com/in/seenivenkat/" target="_blank" rel="noopener" class="btn btn-secondary">LINKEDIN</a>
       </div>
-      <div>
-        <!-- This form posts to Formspree. Replace YOUR_FORM_ID with your own
-             endpoint (formspree.io) since GitHub Pages cannot process forms
-             on its own — it only serves static files. -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
-          <p class="form-note">This form needs a Formspree (or similar) endpoint to work — see README.</p>
-        </form>
+      <div class="badge-row">
+        <span class="badge">10+ Years Experience</span>
+        <span class="badge">Agentic AI Practitioner</span>
+        <span class="badge">Enterprise SaaS</span>
       </div>
     </div>
   </section>
@@ -615,14 +669,13 @@
 
 <footer>
   <div class="wrap">
-    <a href="#top" class="brand"><span class="ring-mark"></span>cxentric</a>
-    <div class="fnote">© <span id="year"></span> [Your Name]. Built with care.</div>
+    <a href="#top" class="brand"><span class="brand-dot"></span>Seeni Venkat</a>
+    <div class="fnote">© <span id="year"></span> SEENIVAASAN VENKAT · <a href="https://www.linkedin.com/newsletters/cxentric-chronicles-7318243852958515201/" target="_blank" rel="noopener" style="color:inherit;">CXENTRIC CHRONICLES ↗</a></div>
   </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window){
     const io = new IntersectionObserver((entries) => {
